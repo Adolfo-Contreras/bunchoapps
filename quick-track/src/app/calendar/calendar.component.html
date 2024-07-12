@@ -1,0 +1,23 @@
+<div class="calendar-container">
+  <div class="calendar">
+
+    <div class="headline">
+      <div class="calendar-headline-month">{{firstDayOfMonth().monthShort}}, {{firstDayOfMonth().year}}</div>
+    </div>
+    <div class="calendar-headline-controls">
+      <div class="calendar-headline-control"><ion-icon name="caret-back"></ion-icon></div>
+      <div class="calendar-headline-control">Today</div>
+      <div class="calendar-headline-control"><ion-icon name="caret-forward"></ion-icon></div>
+    </div>
+    <div class="calendar-weeks-grid">
+      @for (weekDay of weekdays(); track $index) {
+         <div class="calendar-weeks-grid-cell">{{weekDay}}</div>
+      }
+    </div>
+      <div class="calendar-grid">
+        @for (days of daysofMonth(); track $index) {
+          <div class="calendar-grid-cell">{{days.day}}</div>
+        }
+      </div>
+  </div>
+</div>
